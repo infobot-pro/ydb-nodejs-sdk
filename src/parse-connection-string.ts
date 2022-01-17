@@ -27,9 +27,10 @@ export function parseConnectionString(connectionString: string): ParsedConnectio
     }
 
     const host = parsedUrl.host || 'localhost';
+    const port = parsedUrl.port || 443;
 
     return {
-        endpoint: `${parsedUrl.protocol}//${host}`,
+        endpoint: `${parsedUrl.protocol}//${host}:${port}`,
         database,
     };
 }
